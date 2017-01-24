@@ -4,8 +4,7 @@ Created on Jan 23, 2017
 @author: Alessandra Marrero 12-11091
 @author: Julio Fuenmayor 13-10488
 '''
-from datetime import datetime
-from time import strptime
+from datetime import *
 
 class Tarifa:
     def __init__(self, weekDay = 1, weekendDays = 2):
