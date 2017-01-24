@@ -24,6 +24,16 @@ if __name__ == '__main__':
     
     print("La tarifa de los dias de semana es: %d")%(tarifa.semana)
     print("La tarifa de los dias de fin de semana es: %d")%(tarifa.finDeSemana)
-    pass
+    date1 = raw_input("Ingrese su fecha de entrada en el siguiente formato DD-MM-AAAA: ")
+    date2 = raw_input("Ingrese su fecha de salida en el siguiente formato DD-MM-AAAA: ")
+    date1 = date1.split("-")
+    date1 = [int(i) for i in date1]
+    date2 = date2.split("-")
+    date2 = [int(i) for i in date2]
+    
+    if date(date2[2], date2[1], date2[0]) < date(date1[2], date1[1], date1[0]):
+        print("Usted introdujo una fecha de salida invalida.")
+        exit()
+    
     
     
