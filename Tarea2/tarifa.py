@@ -24,5 +24,6 @@ if __name__ == '__main__':
     
     print("La tarifa de los dias de semana es: %d")%(tarifa.semana)
     print("La tarifa de los dias de fin de semana es: %d")%(tarifa.finDeSemana)
+    pass
     
     
