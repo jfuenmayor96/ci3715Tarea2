@@ -5,11 +5,14 @@ Created on Jan 23, 2017
 @author: Julio Fuenmayor 13-10488
 '''
 
+
+def calcularPrecio(tarifa, tiempoDeServicio):
+    
+    
+    return 
+        
+
+
 if __name__ == '__main__':
-    pass
-
-    pass
-    print("Hello world")
-    pass
-
+    
     
