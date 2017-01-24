@@ -6,6 +6,6 @@ Created on Jan 23, 2017
 '''
 
 if __name__ == '__main__':
-    continue
+    pass
 
     
