@@ -42,3 +42,14 @@ class TestSuite(unittest.TestCase):
         fin = datetime(2000,1,8,8,8,17,0)
         servicio = [inicio, fin]
         self.assertEqual(calcularPrecio(t,servicio),2.05, "La prueba ha fallado")
+        
+        '''
+    Este es el caso de prueba de esquina donde se tiene un trabajo de
+    6 dias y 59 minutos. 
+    ''' 
+    def testEsquina2(self):
+        t = Tarifa([1,0],[2,0])
+        inicio = datetime(2000,1,1,0,0,0,0)
+        fin = datetime(2000,1,7,23,59,59,59)
+        servicio = [inicio, fin]
+        self.assertEqual(calcularPrecio(t,servicio),216, "La prueba ha fallado")
