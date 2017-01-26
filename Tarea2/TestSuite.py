@@ -20,3 +20,14 @@ class TestSuite(unittest.TestCase):
         fin = datetime(2000,1,8,8,0,0,0)
         servicio = [inicio, fin]
         self.assertEqual(calcularPrecio(t,servicio),168.0 , "La prueba ha fallado")
+
+    '''
+    Este es el caso de prueba de frontera donde se tiene un trabajo de
+    15 minutos. 
+    ''' 
+    def testTiempoMinimo(self):
+        t = Tarifa([1,0],[1,0])
+        inicio = datetime(2000,1,8,8,0,0,0)
+        fin = datetime(2000,1,8,8,8,15,0)
+        servicio = [inicio, fin]
+        self.assertEqual(calcularPrecio(t,servicio),1, "La prueba ha fallado")
