@@ -102,20 +102,17 @@ if __name__ == '__main__':
 
     if inicio.date() > fin.date():
         print("Usted introdujo una fecha de salida invalida.")
-        #exit()
+
     tiempoDeServicio = [inicio,fin]
     tiempoTotal = fin - inicio
     horasTotales =  (tiempoTotal.total_seconds()) // 3600
     if (tiempoTotal.total_seconds() < 900):
         print("El tiempo de estadia no puede ser menor a 15 minutos.")
-        #exit()
     
     if horasTotales > 168: 
         print("No puede tener una estadia de mas de 7 dias.")
-        #exit()
     monto = calcularPrecio(tarifa, tiempoDeServicio)
-    #bolivaresF, centimosF =calcularPrecio(tarifa, tiempoDeServicio)
-    #monto = montos[0] + montos[1]
+   
     print("El monto total a cancelar es %f bolivares")%(monto)
 
 
