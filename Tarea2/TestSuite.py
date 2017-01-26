@@ -65,4 +65,15 @@ class TestSuite(unittest.TestCase):
         servicio = [inicio, fin]
         self.assertEqual(calcularPrecio(t,servicio),3, "La prueba ha fallado")
 
-    
+    '''
+    Este es el caso de prueba malicioso donde la fecha de fin es menor a
+    la de inicio.
+    '''   
+    def testFechaUnderflow(self):
+        t = Tarifa([1,0],[1,0])
+        
+        inicio = datetime(2000,1,9,8,0,0,0)
+        fin = datetime(2000,1,8,8,8,15,0)
+        servicio = [inicio, fin]
+        
+        assert(inicio < fin)
