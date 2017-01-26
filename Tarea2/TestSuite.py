@@ -52,3 +52,17 @@ class TestSuite(unittest.TestCase):
         fin = datetime(2000,1,7,23,59,59,59)
         servicio = [inicio, fin]
         self.assertEqual(calcularPrecio(t,servicio),216, "La prueba ha fallado")
+        
+    '''
+    Este es el caso de prueba malicioso donde el trabajo comienza en dia de 
+    semana y termina en fin de semana. 
+    '''     
+    def testEntreSemanaYFinDeSemana(self):
+        t = Tarifa([1,0],[2,0])
+        
+        inicio = datetime(2017,1,27,23,0,0,0)
+        fin = datetime(2017,1,28,1,0,0,0)
+        servicio = [inicio, fin]
+        self.assertEqual(calcularPrecio(t,servicio),3, "La prueba ha fallado")
+
+    
