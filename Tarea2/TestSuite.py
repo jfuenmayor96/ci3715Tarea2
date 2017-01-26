@@ -95,3 +95,11 @@ class TestSuite(unittest.TestCase):
         tiempoTotal = fin - inicio
         horasTotales =  (tiempoTotal.total_seconds()) // 3600
         assert(horasTotales > 168)
+        
+    '''
+    Este es el caso de prueba malicioso donde se tiene una tarifa
+    negativa. 
+    '''        
+    def testTarifaNegativa(self):
+        t = Tarifa([-11,0], [-11,0])
+        assert(t.semana[0] > 0 and t.finDeSemana[0] > 0 and t.semana[1] > 0 and t.finDeSemana[1] > 0)
