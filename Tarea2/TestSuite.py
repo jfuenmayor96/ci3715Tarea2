@@ -103,3 +103,6 @@ class TestSuite(unittest.TestCase):
     def testTarifaNegativa(self):
         t = Tarifa([-11,0], [-11,0])
         assert(t.semana[0] > 0 and t.finDeSemana[0] > 0 and t.semana[1] > 0 and t.finDeSemana[1] > 0)
+        
+if __name__ == "__main__":
+    unittest.main()
