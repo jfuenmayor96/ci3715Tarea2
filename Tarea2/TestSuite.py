@@ -73,5 +73,15 @@ class TestSuite(unittest.TestCase):
     def testFechaUnderflow(self):
         inicio = datetime(2000,1,9,8,0,0,0)
         fin = datetime(2000,1,8,8,8,15,0)
-        
         assert(inicio < fin)
+
+    '''
+    Este es el caso de prueba malicioso donde se tiene un trabajo de
+    menos de 15 minutos. 
+    '''         
+    def testMenosDe15(self):
+        t = Tarifa([1,0],[1,0])
+        inicio = datetime(2000,1,9,8,0,0,0)
+        fin = datetime(2000,1,8,8,8,14,0)
+        tiempoTotal = fin - inicio
+        assert (tiempoTotal.total_seconds() < 900)
