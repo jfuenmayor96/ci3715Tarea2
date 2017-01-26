@@ -41,6 +41,7 @@ class TestSuite(unittest.TestCase):
         inicio = datetime(2000,1,8,8,0,0,0)
         fin = datetime(2000,1,8,8,8,17,0)
         servicio = [inicio, fin]
+        self.assertEqual(calcularPrecio(t,servicio),2.05, "La prueba ha fallado")
     
     '''
     Este es el caso de prueba de esquina donde se tiene un trabajo de
@@ -70,10 +71,7 @@ class TestSuite(unittest.TestCase):
     la de inicio.
     '''   
     def testFechaUnderflow(self):
-        t = Tarifa([1,0],[1,0])
-        
         inicio = datetime(2000,1,9,8,0,0,0)
         fin = datetime(2000,1,8,8,8,15,0)
-        servicio = [inicio, fin]
         
         assert(inicio < fin)
